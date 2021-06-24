@@ -137,6 +137,14 @@ module.exports = {
 			banner: `Created: ${new Date().toUTCString()}`,
 			raw: false,
 			entryOnly: false
+		}),
+		new webpack.DefinePlugin({
+			'process.env.REACT_APP_CLIENT_URL': JSON.stringify(
+				process.env.REACT_APP_CLIENT_URL
+			),
+			'process.env.REACT_APP_WEB_SOCKET': JSON.stringify(
+				process.env.REACT_APP_WEB_SOCKET
+			)
 		})
 	],
 
